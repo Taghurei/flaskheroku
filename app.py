@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from flask import Flask, request
+from flask import Flask
 from flask_cors import CORS
 from flask_heroku import Heroku 
 import unidecode
