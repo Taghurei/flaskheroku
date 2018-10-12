@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
+from flask_heroku import Heroku 
 import unidecode
+
 app = Flask(__name__)
 CORS(app)
+heroku = Heroku(app)
+
 
 
 @app.route('/')
@@ -38,7 +42,14 @@ def envoi():
             for k in tag:
                 if (i==k): # En cas d'égalité on ajoute le tag dans la liste des tag ressortis
                     Liste_tag_garde.append(k)
-    return 'Tag ressort i:  %s' % list(set(Liste_tag_garde)) # On renvoie dans la console les tags ressortis
+    return 'Tag ressorti :  %s' % list(set(Liste_tag_garde)) # On renvoie dans la console les tags ressortis
 
+
+    """
+    if request.method == 'POST':
+ return "vous avez envoyé: {msg}".format(msg=request.form['msg'])
+    return  '<form action="" method="post"><input type="text" name="msg" /><input type="submit" value="Envoyer" /></form>'
+    """
+    
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
