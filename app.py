@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 
 from flask import Flask
-import unidecode
 
 app = Flask(__name__)
 
