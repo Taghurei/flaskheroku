@@ -14,7 +14,7 @@ CORS(app)
 @app.route('/')
 @app.route('/coucou/')
 def index():
-   return "hello to the flask app"
+   return stopwords
 
 @app.route('/envoi', methods=['POST'])
 def envoi():
