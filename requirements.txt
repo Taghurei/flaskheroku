@@ -6,4 +6,4 @@ MarkupSafe==0.23
 Werkzeug==0.10.4
 unidecode==1.0.22
 flask_cors==2.1.0
-/nltk.txt
+nltk==3.2
