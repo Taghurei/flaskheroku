@@ -1,4 +1,4 @@
-stop_words=['&',
+stopwords=['&',
  "''",
  ',',
  '-',
