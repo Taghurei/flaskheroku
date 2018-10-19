@@ -6,7 +6,7 @@ from flask_cors import CORS
 import unidecode
 app = Flask(__name__)
 CORS(app)
-import stop_words
+import Stop_words
 
 @app.route('/')
 @app.route('/coucou/')
@@ -21,7 +21,7 @@ def envoi():
     for k in range (len(tag)):
         tag[k] = unidecode.unidecode(tag[k].lower()) #On enlève les caractères speciaux et les majuscules de notre liste de tag
     liste_mot_utile=[]
-    stop_words = stop_words.stop_words #definiton des mots a retirer
+    stop_words = Stop_words.stopwords #definiton des mots a retirer
     for key,value in (inputted_json.items()):#parcours du dictionnaire
         if (type(value) is dict):#et du dictionnaires de dictionnaires (boucle double for obligatoire)
             for key,value in value.items():
