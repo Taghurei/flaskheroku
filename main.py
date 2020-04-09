@@ -3,6 +3,7 @@
 
 from flask import Flask,request
 from flask_cors import CORS
+import os
 import unidecode
 app = Flask(__name__)
 CORS(app)
@@ -11,7 +12,7 @@ import Stop_words
 @app.route('/')
 @app.route('/coucou/')
 def index():
-   return "hello to the flask app"
+   return os.environ['SKEY']
 
 @app.route('/envoi', methods=['POST'])
 def envoi():
